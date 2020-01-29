@@ -1,0 +1,13 @@
+@mobile-break-point : 750px;
+@mobile-controls-block-height : 150px;
+
+@import "general.less";
+@import "mobile/layout.less";
+
+@media only screen and (min-width: @mobile-break-point){
+
+    @import "desktop/layout.less";
+
+}
+
+@import "../Games/ClassicTetris/View/css/master.less";

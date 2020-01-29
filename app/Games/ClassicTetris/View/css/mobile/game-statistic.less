@@ -1,0 +1,27 @@
+.game-statistic{
+  width: 50px;
+  fill: rgba(0, 79, 255, 0.69);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 2px grey;
+  /* fill: rgba(255, 255, 255, 0.17); */
+  font-family: monospace;
+  font-size: 11px;
+
+  user-select: none;
+
+  rect{
+    rx: 5;
+    ry: 5;
+    stroke: #8a999c;
+    stroke-width: 1px;
+    fill: url('#empty-gradient');
+  }
+
+  .time{
+    tspan:last-child{
+      transform: translateX(-5px);
+    }
+  }
+}

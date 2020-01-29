@@ -1,0 +1,138 @@
+rect.block{
+  rx: 5;
+  ry: 5;
+}
+.block {
+  stroke: #8a999c;
+  stroke-width: 1px;
+
+  &.empty{
+    fill: url('#empty-gradient');
+  }
+  &.J-shape{
+    fill: url('#j-shape-gradient');
+  }
+  &.L-shape{
+    fill: url('#l-shape-gradient');
+  }
+  &.Z-shape{
+    fill: url('#z-shape-gradient');
+  }
+  &.S-shape{
+    fill: url('#s-shape-gradient');
+  }
+  &.O-shape{
+    fill: url('#o-shape-gradient');
+  }
+  &.I-shape{
+    fill: url('#i-shape-gradient');
+  }
+  &.T-shape{
+    fill: url('#t-shape-gradient');
+  }
+
+  &.J-shape.projection,
+  &.L-shape.projection,
+  &.Z-shape.projection,
+  &.S-shape.projection,
+  &.O-shape.projection,
+  &.I-shape.projection,
+  &.T-shape.projection{
+    fill : url('#projection-gradient');
+    stroke:white;
+  }
+
+  /*&.projection {
+    opacity: 0.2;
+    stroke: white;
+  }*/
+}
+
+radialGradient:not(#empty-gradient){
+  stop{
+    stop-opacity: 0.9;
+  }
+}
+
+
+#empty-gradient {
+  & > stop:first-of-type {
+    stop-color: rgba(178, 241, 255, 0.17);
+  }
+  & > stop:last-of-type{
+    stop-color: rgba(255, 255, 255, 0.33);
+  }
+}
+
+#projection-gradient{
+  & > stop:first-of-type {
+    stop-color: rgba(255, 255, 255, 0.84);
+  }
+  & > stop:last-of-type{
+    stop-color: rgb(209, 209, 209);
+  }
+}
+
+
+#z-shape-gradient{
+  & > stop:first-of-type {
+    stop-color: rgba(88, 173, 84, 0.84);
+  }
+  & > stop:last-of-type{
+    stop-color: rgb(51, 173, 42);
+  }
+ }
+
+#s-shape-gradient{
+  & > stop:first-of-type {
+       stop-color: rgb(55, 79, 222);
+     }
+  & > stop:last-of-type{
+    stop-color: rgb(36, 53, 173);
+  }
+}
+
+#l-shape-gradient{
+  & > stop:first-of-type {
+    stop-color: rgba(255, 218, 98, 0.7);
+  }
+  & > stop:last-of-type{
+    stop-color: rgba(255, 192, 0);
+  }
+}
+
+#j-shape-gradient{
+  & > stop:first-of-type {
+    stop-color: rgb(163, 77, 255);
+  }
+  & > stop:last-of-type{
+    stop-color: rgb(134, 30, 255);
+  }
+}
+
+#t-shape-gradient{
+  & > stop:first-of-type {
+    stop-color: rgb(140, 155, 156, 0.5);
+  }
+  & > stop:last-of-type{
+    stop-color: rgb(96, 102, 104);
+  }
+}
+
+#o-shape-gradient{
+  & > stop:first-of-type {
+    stop-color: rgb(126, 212, 255);
+  }
+  & > stop:last-of-type{
+    stop-color: rgb(36, 169, 255);
+  }
+}
+
+#i-shape-gradient{
+  & > stop:first-of-type {
+    stop-color: rgba(183, 82, 84, 0.92);
+  }
+  & > stop:last-of-type{
+    stop-color: rgb(183, 12, 22);
+  }
+}

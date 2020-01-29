@@ -1,0 +1,49 @@
+.game-controls{
+  position: absolute;
+  height: @mobile-controls-block-height;
+  bottom: -@mobile-controls-block-height;
+  width: 100%;
+
+
+  button{
+    position: absolute;
+    border-radius: 5px;
+    background: transparent;
+    border: white solid 2px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .controls-button-left, .controls-button-right,
+  .controls-button-rotate,.controls-button-back-rotate,
+  .controls-button-soft-drop, .controls-button-hard-drop{
+    height: 50%;
+    width: 30%;
+  }
+
+  .controls-button-left,
+  .controls-button-right,
+  .controls-button-rotate{
+    top : 10px;
+    background: white;
+    color:#9fc3cd;
+  }
+
+  .controls-button-hard-drop,
+  .controls-button-back-rotate,
+  .controls-button-soft-drop{
+    bottom: 0;
+    height: 25%;
+  }
+
+  .controls-button-rotate,
+  .controls-button-back-rotate{
+    left: 35%;
+  }
+  .controls-button-right,
+  .controls-button-soft-drop{
+    right: 0;
+  }
+}
