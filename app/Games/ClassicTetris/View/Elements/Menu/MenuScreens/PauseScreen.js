@@ -1,6 +1,6 @@
 import OverLayer from "./OverLayer.js";
 import TimeFormater from "../../../../Hellpers/TimeForrmater/TimeFormater.js";
-import {renderButton, renderInput, renderHeader} from "./Mixin/RenderElements.js";
+import {renderButton, renderInput, renderHeader} from "./Common/RenderElements.js";
 
 export default class PauseScreen extends OverLayer{
     constructor() {

@@ -11,7 +11,8 @@ let config = {
                     "hardDrop":["Space"],
                     "rotate":["ArrowUp"],
                     "pause":["Escape"],
-                    "backRotate":["KeyZ"]
+                    "backRotate":["KeyZ"],
+                    "autoRotate":["KeyR"]
                 }
         },
     "gameConfig":

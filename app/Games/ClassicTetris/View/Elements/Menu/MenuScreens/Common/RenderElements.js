@@ -24,7 +24,7 @@ export function renderInput(text, className, inputAttr, updateCallback){
             e.target.closest('ul').querySelector('li.sound-volume').classList.remove('checked');
         };
 
-        updateCallback(className);
+        (updateCallback && updateCallback(className));
     })
     return {liItem: liItem, inputElement : input}
 }

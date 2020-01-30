@@ -1,5 +1,5 @@
 import OverLayer from "./OverLayer.js";
-import {renderInput, renderButton, renderHeader} from "./Mixin/RenderElements.js";
+import {renderInput, renderButton, renderHeader} from "./Common/RenderElements.js";
 
 export default class SettingScreen extends OverLayer{
     constructor(props) {
@@ -16,9 +16,9 @@ export default class SettingScreen extends OverLayer{
         let {liItem: queueVisibleItem,inputElement: queueVisibleElement} = renderInput('Show shape queue ', 'queue', {type:"checkbox"});
         let {liItem: projectionVisibleItem,inputElement: projectionVisibleElement} = renderInput('Show shape projection', 'projection', {type:"checkbox"});
         let {liItem: autoRotateItem,inputElement: autoRotateElement} = renderInput('Enable shape autorotate ', 'auto-rotate', {type:"checkbox"});
-        let {liItem: soundOnItem, inputElement: soundOnElement} = renderInput('Turn on game sounds', 'sound-on', {type:"checkbox"});
-        let {liItem: musicOnItem, inputElement: musicOnElement} = renderInput('Turn on music ', 'music-on', {type:"checkbox"});
-        let {liItem: soundVolumeItem, inputElement: soundVolumeElement} = renderInput('Volume ', 'sound-volume', {type:"range", min:0, max: 100} );
+        let {liItem: soundOnItem, inputElement: soundOnElement} = renderInput('Turn on game sounds', 'sound-on', {type:"checkbox"}, _soundConfigChanged.bind(this));
+        let {liItem: musicOnItem, inputElement: musicOnElement} = renderInput('Turn on music ', 'music-on', {type:"checkbox"}, _soundConfigChanged.bind(this));
+        let {liItem: soundVolumeItem, inputElement: soundVolumeElement} = renderInput('Volume ', 'sound-volume', {type:"range", min:0, max: 100} , _soundConfigChanged.bind(this));
 
 
         let userConfig  = this._state.userConfig.gameConfig;
@@ -54,7 +54,7 @@ export default class SettingScreen extends OverLayer{
             checkSize('standard')
         }
 
-        this.startButton = this._renderButton('start', 'btn-start');
+        this.startButton = renderButton('start', 'btn-start');
         this.startButton.addEventListener('click', ()=>{
             this.hide();
             const config = {
@@ -91,7 +91,17 @@ export default class SettingScreen extends OverLayer{
         this.content.append(this.keyConfigButton);
         this.content.append(this.startButton);
 
+        function _soundConfigChanged(){
+            this.fire('soundConfigurationUpdate', {
+                soundOn: soundOnElement.checked,
+                music:musicOnElement.checked,
+                volume: soundVolumeElement.value,
+            })
+        }
+
+
     }
+
 
     _renderSelectSize(){
 

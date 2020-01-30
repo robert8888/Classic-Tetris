@@ -1,6 +1,6 @@
 import OverLayer from "./OverLayer.js";
 import keyBaseConfiguration from "../../../../Game/Configuration/KeyConfiguration/keyConfig.js"
-import {renderButton, renderHeader} from "./Mixin/RenderElements.js";
+import {renderButton, renderHeader} from "./Common/RenderElements.js";
 
 export default class KeySettingScreen extends OverLayer{
     constructor() {

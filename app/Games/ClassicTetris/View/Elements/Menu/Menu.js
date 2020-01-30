@@ -72,10 +72,14 @@ export default class Menu extends ViewElement{
             this._state.userConfig.gameConfig = config;
             this.fire('start', this._state.userConfig);
             settingScreen.hide();
-        })
+        });
         settingScreen.on('goToKeyConfiguration', ()=>{
             this._createKeySettingScreen();
+        });
+        settingScreen.on('soundConfigurationUpdate', (config) =>{
+            this.fire('soundConfigurationUpdate', config);
         })
+
 
 
         this.screens.setting = settingScreen;
